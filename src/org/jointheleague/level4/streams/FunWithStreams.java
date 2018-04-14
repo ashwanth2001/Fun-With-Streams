@@ -12,7 +12,6 @@ public class FunWithStreams {
     public static void print(Stream<Integer> numbers) {
         // TODO hint: use forEach
     	    numbers.forEach(s->System.out.println(s));
-        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -24,7 +23,6 @@ public class FunWithStreams {
     public static void parallelPrint(Stream<Integer> numbers) {
         // TODO hint: use forEach
     		numbers.parallel().forEach(s->System.out.println(s));
-        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -37,7 +35,6 @@ public class FunWithStreams {
         // TODO hint: use map
     		Stream<String> ret = numbers.map(n -> Integer.toString(n));
     		return ret;
-        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -49,7 +46,6 @@ public class FunWithStreams {
     public static Optional<Integer> sum(Stream<Integer> numbers) {
         // TODO hint: use reduce
     	  	return numbers.reduce((x,y) -> x+y);
-        //throw new UnsupportedOperationException("pending");
     }
     
     
@@ -64,7 +60,6 @@ public class FunWithStreams {
         // TODO hint: use map and reduce, and Optional#ifPresent
     		Stream<String> ret = convertToString(numbers);
     		ret.reduce((x,y) -> "(" + x + " + " + y + ")").ifPresent(s -> System.out.println(s));
-        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -76,7 +71,6 @@ public class FunWithStreams {
     public static Stream<Integer> evens(Stream<Integer> numbers) {
         // TODO hint: use filter
     		return numbers.filter(x -> !((x%2)==1));
-        //throw new UnsupportedOperationException("pending");
     }
     
     // Extra credit
