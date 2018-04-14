@@ -11,7 +11,8 @@ public class FunWithStreams {
      */
     public static void print(Stream<Integer> numbers) {
         // TODO hint: use forEach
-        throw new UnsupportedOperationException("pending");
+    	    numbers.forEach(s->System.out.println(s));
+        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -22,7 +23,8 @@ public class FunWithStreams {
      */
     public static void parallelPrint(Stream<Integer> numbers) {
         // TODO hint: use forEach
-        throw new UnsupportedOperationException("pending");
+    		numbers.parallel().forEach(s->System.out.println(s));
+        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -33,7 +35,9 @@ public class FunWithStreams {
      */
     public static Stream<String> convertToString(Stream<Integer> numbers) {
         // TODO hint: use map
-        throw new UnsupportedOperationException("pending");
+    		Stream<String> ret = numbers.map(n -> Integer.toString(n));
+    		return ret;
+        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -44,7 +48,8 @@ public class FunWithStreams {
      */
     public static Optional<Integer> sum(Stream<Integer> numbers) {
         // TODO hint: use reduce
-        throw new UnsupportedOperationException("pending");
+    	  	return numbers.reduce((x,y) -> x+y);
+        //throw new UnsupportedOperationException("pending");
     }
     
     
@@ -57,7 +62,9 @@ public class FunWithStreams {
      */
     public static void sumFormula(Stream<Integer> numbers) {
         // TODO hint: use map and reduce, and Optional#ifPresent
-        throw new UnsupportedOperationException("pending");
+    		Stream<String> ret = convertToString(numbers);
+    		ret.reduce((x,y) -> "(" + x + " + " + y + ")").ifPresent(s -> System.out.println(s));
+        //throw new UnsupportedOperationException("pending");
     }
     
     /**
@@ -68,7 +75,8 @@ public class FunWithStreams {
      */
     public static Stream<Integer> evens(Stream<Integer> numbers) {
         // TODO hint: use filter
-        throw new UnsupportedOperationException("pending");
+    		return numbers.filter(x -> !((x%2)==1));
+        //throw new UnsupportedOperationException("pending");
     }
     
     // Extra credit
@@ -82,6 +90,7 @@ public class FunWithStreams {
      */
     public static Optional<Integer> deductFromFirst(Stream<Integer> numbers) {
         // TODO
-        throw new UnsupportedOperationException("pending");
+    		return sum(numbers);
+        //throw new UnsupportedOperationException("pending");
     }
 }
